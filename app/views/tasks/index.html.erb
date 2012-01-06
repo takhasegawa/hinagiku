@@ -6,6 +6,8 @@
   <%= submit_tag "検索" %>
 <% end %>
 
+<%= render "categories" if Category.all.present? %>
+
 <ul class="navigation">
 <% if params[:action] == "done" %>
   <li><%= link_to "未完了タスク", :tasks %></li>

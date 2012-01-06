@@ -138,3 +138,20 @@ form {
     float: left;
   }
 }
+
+/*
+ * categories
+ */
+ 
+ ul#categories {
+  width: 380px;
+  margin: 15px 5px 15px 5px;
+   list-style: none;
+   padding: 10px;
+   border: dotted 1px #ccc;
+ 
+   li {
+     display: inline;
+     padding: 5px;
+   }
+ }
