@@ -91,6 +91,11 @@ ul.navigation {
 /*
  * tasks#show
  */
+ div#task_category {
+   color: #383;
+   font-weight: bold;
+ }
+ 
 div#tasks_due_date {
   text-align: right;
   color: #f00;
@@ -153,5 +158,8 @@ form {
    li {
      display: inline;
      padding: 5px;
+   }
+   li.selected {
+     font-weight: bold;
    }
  }

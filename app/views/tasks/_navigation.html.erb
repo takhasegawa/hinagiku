@@ -1,0 +1,9 @@
+<ul class="navigation">
+<% if params[:action] == "done" %>
+  <li><%= link_to "未完了タスク", [@category, :tasks] %></li>
+  <li class="selected">完了したタスク</li>
+<% else %>
+  <li class="selected">未完了タスク</li>
+  <li><%= link_to "完了したタスク", [ :done, @category, :tasks ] %></li>
+<% end %>
+</ul>
