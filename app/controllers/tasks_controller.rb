@@ -1,23 +1,15 @@
 class TasksController < ApplicationController
   
+  #  before Filter定義 ------------------------
+  before_filter :get_base_tasks , :only => [:index, :done]
+  
+  # action定義 ------------------------------  
   def index
-    if params[:category_id]
-      @category = Category.find(params[:category_id])
-      @tasks = @category.tasks.undone.paginate(:page => params[:page],
-                                                                          :per_page => 10)
-    else
-      @tasks = Task.undone.paginate(:page => params[:page], :per_page => 10)
-    end
+    @tasks = @tasks.undone.page(params[:page]).limit(10)
   end
  
   def done
-    if params[:category_id]
-      @category = Category.find(params[:category_id])
-      @tasks = @category.tasks.done.paginate(:page => params[:page],
-                                                                      :per_page => 10)
-    else
-      @tasks = Task.done.paginate(:page => params[:page], :per_page => 10)
-    end
+    @tasks = @tasks.done.page(params[:page]).limit(10)
     render :index
   end
   
@@ -74,6 +66,19 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update_attribute(:done, false)
     redirect_to :back
+  end
+
+
+# privateメソッド ----------------
+private
+
+  def get_base_tasks
+    if params[:category_id]
+      @category = Category.find(params[:category_id])
+      @tasks = @category.tasks
+    else
+      @tasks = Task
+    end
   end
 
 end
