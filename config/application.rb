@@ -19,5 +19,6 @@ module Hinagiku
     config.filter_parameters += [:password]
     config.assets.enabled = true
     config.assets.version = '1.0'
+    config.action_controller.include_all_helpers = false
   end
 end
