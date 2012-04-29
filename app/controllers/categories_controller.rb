@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_record_not_found
+
   def index
     @categories = Category.all
   end 
@@ -40,5 +42,12 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to :categories
   end
-  
+
+private
+
+  def rescue_record_not_found(exception)
+    redirect_to :categories
+  end
+
+
 end
