@@ -12,5 +12,7 @@ Hinagiku::Application.routes.draw do
     end
   end
   
+  resource :session, :only => [ :new, :create, :destroy ]
+  
   match '*anything' => 'errors#not_found'
 end

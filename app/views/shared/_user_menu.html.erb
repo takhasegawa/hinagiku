@@ -1,0 +1,7 @@
+<ul class="user_menu_items">
+  <li>ようこそ <%= current_user.display_name %>さん</li>
+  <li>
+    <%= link_to "ログアウト", :session, :method => :delete,
+      :confirm => "ログアウトしますか？" %>
+  </li>
+</ul>
