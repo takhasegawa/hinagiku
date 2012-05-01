@@ -1,9 +1,14 @@
+$red: #c00;
+
+div.field_with_errors label {
+  color: $red;
+  font-weight: bold;
+}
+
 div.field_with_errors {
-  label {
-    color: #f00;
-    font-weight: bold;
-  }
-  input[type=text],
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
   textarea {
     background-color: #fe8;
   }
@@ -12,5 +17,9 @@ div.field_with_errors {
 ul.error_messages {
   list-style: square;
   margin: 15px 30px;
-  color: #f00;
+  color: $red;
+  
+  li {
+    text-align: left;
+  }
 }

@@ -1,102 +1,52 @@
-/*
- * Container
- */
-body {
-  background-color : #fff;
-}
-
-div#wrapper {
-  width: 1010px;
-  margin: 10px auto;
-  background-color: #fff;
-}
-
-div#header, div#footer {
-  color: #666;
-  margin: 5px;
-  padding: 5px;
-}
-
-div#footer {
-  text-align: center;
-}
-
-div#contents {
-  background-color: #fff;
-  color: #000;
-  margin: 5px;
-  padding: 5px;
-  border: solid 1px #ccc;
-}
-
-/*
- * tasks#index
- */
+$r: 5px;
 
 table.tasks {
-  width: 560px;
-  margin: 2px 5px 5px 5px;
+  width: 530px;
+  margin: 5px auto;
   background-color: #eee;
   border-collapse: collapse;
   border-spacing: 0;
-
-  tr {
-    border: solid 1px #ccc;
-  }
   
   td {
     padding: 5px;
   }
   
+  td:nth-child(2) {
+    font-size: 90%;
+    text-align: center;
+    color: #444;
+  }
+  
+  td:nth-child(3) {
+    text-align: center;
+    
+    a {
+      color: #444;
+    }
+  }
+  
   col.name {
-    width:400px;
+    width: 300px;
   }
   
   col.due_date {
-    width:200px;
     background-color: #ddd;
   }
-  
-  col.links {
-    width: 300px;
-    background-color: #bbb;
-  }
-}
 
-ul.navigation {
-  width: 560px;
-  margin: 0 0 0 5px;
-    list-style: none;
-  padding: 0;
-  
-  li {
-    display: inline;
-    margin-right: 1px;
-    background-color: #666;
-    border: solid 1px #ccc;
-    padding: 5px;
-  
-    .selected {
-      background-color: #eee;
-    }  
-  
-    a {
-      color: #fff;
-      text-decoration: none;
+  tr:nth-child(even) {
+    background-color: #9dd2de;
+    td:nth-child(2) {
+      background-color: #b3b3b3;
     }
   }
 }
 
+div#task_category {
+  color: #080;
+  font-weight: bold;
+}
 
-/*
- * tasks#show
- */
- div#task_category {
-   color: #383;
-   font-weight: bold;
- }
- 
-div#tasks_due_date {
+div#task_due_date {
   text-align: right;
   color: #f00;
 }
@@ -104,93 +54,25 @@ div#tasks_due_date {
 div#task_description {
   border: solid 1px #888;
   padding: 5px;
-  background-color: #eee;
 }
 
-/*
- * tasks#new
- */
-
-form {
+ul#categories {
   width: 540px;
-  margin: 4px;
-  background-color: #eee;
-  padding: 10px;
-  border: solid 1px #ccc;
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  li {
-    clear: both;
-    margin: 0;
-    padding: 0;
-  }
-  
-  label {
-    display: block;
-    width: 100px;
-    float: left;
-    padding-top: .2em;
-  }
-  
-  textarea {
-    height: 150px;
-    width:430px;
-    float: left;
-  }
-}
-
-/*
- * categories
- */
- 
- ul#categories {
-  width: 540px;
-  margin: 15px 5px 15px 5px;
-   list-style: none;
-   padding: 10px;
-   border: dotted 1px #ccc;
- 
-   li {
-     display: inline;
-     padding: 5px;
-   }
-   li.selected {
-     font-weight: bold;
-   }
- }
- 
- /*
-  * form
-*/
-form ul.radio_buttons {
-  display: inline-block;
-  
-  label {
-    display: inline;
-    float: none;
-  }
-}
-
-
-ul.menu_items {
-  width: 540px;
-  margin: 15px 5px 15px 5px;
   list-style: none;
+  margin: 15px auto 5px;
   padding: 10px;
-  border: dotted 1px #ccc;
   
   li {
-    display: inline-block;
-    padding: 5px;
-    font-weight: bold;
-    
-    a {
-      font-weight:bold;
-    }
+    display: inline;
+    padding: 5px 10px;
+    border: solid 1px #ccc;
+    border-radius: $r;
+    -moz-border-radius: $r;
+    -webkit-border-radius: $r;
+  }
+  
+  li.selected {
+    background-color: #ddd;
+    color: #444;
   }
 }
