@@ -15,3 +15,4 @@ end
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'rails-i18n'
+gem 'will-paginate-i18n'
