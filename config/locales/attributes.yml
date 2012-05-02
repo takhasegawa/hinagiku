@@ -13,3 +13,6 @@ ja:
         login_name: ログイン名
         display_name: 表示用の名前
         password: パスワード
+        current_password: 現在のパスワード
+        new_password: 新しいパスワード
+        new_password_confirmation: 新しいパスワード(確認)
