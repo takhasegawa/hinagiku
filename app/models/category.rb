@@ -2,6 +2,9 @@ require 'nkf'
 
 class Category < ActiveRecord::Base
   has_many :tasks, :dependent => :nullify
+  belongs_to :owner, :class_name => "User"
+  
+  attr_accessible :name
   
   before_validation :normalize_values
   

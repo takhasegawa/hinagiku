@@ -1,5 +1,8 @@
 class Task < ActiveRecord::Base
   belongs_to :category
+  belongs_to :owner, :class_name => "User"
+  
+  attr_accessible :name, :description, :due_date, :done, :category_id
 
   scope :done, where(:done => true).order("due_date DESC")
   scope :undone, where(:done => false).order("due_date")
@@ -12,7 +15,9 @@ class Task < ActiveRecord::Base
   validate :check_association
   
   def check_association
-    if category_id && !Category.where(:id => category_id).exists?
+    if category_id &&
+      !owner.categories.where(:id => category_id).exists? &&
+      !owner.tasks.where(:id => id).exists?
       errors.add(:base, :missing_category)
       self.category_id = nil
     end
