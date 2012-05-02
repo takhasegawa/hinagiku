@@ -1,0 +1,11 @@
+ja:
+  flash:
+    accounts:
+      update:
+        notice: アカウント情報を更新しました
+    sessions:
+     create:
+       notice: ログインしました。
+       alert: ユーザーIDまたはパスワードが正しくありません。
+     destroy:
+       notice: ログアウトしました。

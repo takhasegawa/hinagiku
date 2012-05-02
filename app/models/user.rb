@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   attr_writer :setting_password
   attr_accessible :login_name, :display_name, :password
   
-  validate :login_name, :presence => true, :length => { :maximum => 20 },
+  validates :login_name, :presence => true, :length => { :maximum => 20 },
     :uniqueness => { :case_sensitive => false }
-  validate :display_name, :presence => true, :length => { :maximum => 20 }
+  validates :display_name, :presence => true, :length => { :maximum => 20 }
   
   def setting_password?
     @setting_password;

@@ -9,8 +9,9 @@
 <body>
 <div id="wrapper">
   <%= render "shared/header" %>
-   <div id="contents">   
-     <%= yield %>
+    <div id="contents">   
+      <%= render "shared/flash_messages" %>
+      <%= yield %>
    </div>
    <%= render "shared/footer" %>
 </div>  
