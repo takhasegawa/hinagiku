@@ -9,3 +9,7 @@ ja:
         category_id: カテゴリー
       category:
         name: 名称
+      user:
+        login_name: ログイン名
+        display_name: 表示用の名前
+        password: パスワード
