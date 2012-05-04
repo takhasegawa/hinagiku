@@ -1,4 +1,8 @@
 <div id="header">
   <%= image_tag "hinagiku_logo.png", :size => "250x92", :alt => "hinagiku" %>
-  <%= render "shared/user_menu" if current_user %>
+  <% if current_user %>
+    <%= render "shared/user_menu" %>
+  <% else %>
+    <%= render "shared/visitor_menu" %>
+  <% end %>
 </div>

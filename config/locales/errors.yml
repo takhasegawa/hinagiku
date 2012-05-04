@@ -12,5 +12,11 @@ ja:
               taken: "「%{value}」は重複しています。"
         user:
           attributes:
+            login_name:
+              taken: "「%{value}」は他のユーザーがすでに登録しています。別のユーザーIDを指定してください"
             current_password:
               invalid: "が正しくありません。"
+        email:
+          attributes:
+            address:
+              taken: "「%{value}」は他のユーザーがすでに登録しています。別のメールアドレスを指定してください"
